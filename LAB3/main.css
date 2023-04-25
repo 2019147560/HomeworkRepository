@@ -1,0 +1,68 @@
+body {background-color: skyblue;}
+#love {background-color: black; font-size: 50px; color:skyblue; border-color: white; border-style:dashed; border-width: 5px; max-width:1020px; text-align: center;}
+@keyframes myname {
+from {transform: translateX(0px)};
+to {transform: translateX(100px)};
+}
+@keyframes myname2 {
+    from {transform: translateX(1020px)};
+    to {transform: translateX(-100%)};
+    }
+.anime {
+    animation-name: myname2;
+    animation-duration:4s;
+
+    animation-delay: 1s;
+    animation-direction: alternate;
+    animation-play-state: running;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    border-color: red;
+}
+.flex {display: flex;
+flex-direction: row;
+border-style: double;
+flex-wrap: wrap;
+align-content: stretch;
+max-width: 1020px;
+margin: 10px;}
+
+
+@media screen and (min-width: 801px)
+{.flex {display: flex;
+    flex-direction: row;
+    border-style: double;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    margin: 10px;
+    border-color: red;}
+}
+
+@media screen and (min-width: 481px) and (max-width: 800px)
+{.flex {display: flex;
+    flex-direction: row;
+    
+    border-style: double;
+    flex-wrap: wrap;
+    align-content: stretch;
+    margin: 10px;
+    border-color: orange;}
+}
+
+@media screen and (max-width: 480px)
+{.flex {display: flex;
+    flex-direction: column;
+    border-style: double;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    margin: 10px;}
+}
+
+.hover{max-width: 200px;
+transition: 2s;}
+
+.hover:hover{src:"toygun.jpg";
+    max-width:300px;}
+.text{display: none; }
+.hover:hover .text{display:contents; font-size:40px; }
