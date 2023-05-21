@@ -1,0 +1,6 @@
+[
+    {"name":"lego","src": "2f84b723-a5de-4ac9-a12f-fb9fec76c2a2.jpg","category":"toy" ,"price":"15"},
+    {"name":"gun","src": "toygun.jpg","category": "weapon","price":"35"},
+    {"name":"pirate","src":"gv20000198678_1.jpg" ,"category": "toy","price":"20"},
+    {"name":"nose","src": "nose.jpg","category": "cloth","price":"7"}
+]

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel = "stylesheet" href="main.css">
+         
+    </head>
+    <body style="width:100%">
+
+<div id="love" class="anime"> TOYSTORE</div>
+</div>
+<div id="love" class="flex"> <a href="">mainpage</a>&nbsp|&nbsp&nbsp|&nbsp <a href="login.html">login</a>&nbsp|&nbsp&nbsp|&nbsp <a href="signup.html">signup</a></div>
+</div>
+<form>keyword:<input id="search" type="text"><button type="button" onclick="searching()">submit</button>></form>
+category:<select name="category" id="category" onchange="searching_c();"><option value="toy" selected>toy</option><option value="cloth">cloth</option><option value="weapon">weapon</option></select>
+<button type="button" onclick="searching_c()">submit</button>></form>
+<div class="flex">
+    <div class="hover" ><div id="n0" class="text"></div><image id="i0" class="hover" src="" alt=""><br></image></div>
+    <div class="hover" ><div id="n1" class="text"></div><image id="i1" class="hover" src="" alt=""><br></image></div>
+    <div class="hover"><div id="n2" class="text"></div><image id="i2" class="hover" src="" alt=""><br></image></div>
+    <div class="hover"><div id="n3" class="text"></div><image id="i3" class="hover" src="" alt=""><br></image></div>
+    <div class="hover"><div id="n4" class="text"></div><image id="i4" class="hover" src="" alt=""><br></image></div>
+</div>
+<script type="text/javascript">
+    var json; var array = [];
+    fetch('product.json') .then((response) => response.json()) .then((data) => {json = data; init()});
+    function init() {for(i in json){array.push(i); console.log(i);}display();}
+    function delet(){for(var i=0; i<4; i++){console.log(i);document.getElementById('n'+i).innerText='';document.getElementById('i'+i).src='';document.getElementById('i'+i).alt='';} }
+    function searching() {array =[];console.log(document.getElementById("search").value);for(i in json){if(json[i]['name']==document.getElementById("search").value){array.push(i);}}console.log(array);display();}
+    function searching_c() {array =[];var numSelect = document.getElementById("category");console.log(numSelect.options[numSelect.selectedIndex].text);
+    for(i in json){if(json[i]['category']==numSelect.options[numSelect.selectedIndex].text){array.push(i);}}display();}
+    function fetching(){console.log(document.search);console.log(json.length);display();}
+    function display(){delet();for(var i=0; i<array.length; i++){console.log(i);document.getElementById('n'+i).innerText=json[array[i]]['name']+'\n'+json[array[i]]['price']+'$';document.getElementById('i'+i).src=json[array[i]]['src'];document.getElementById('i'+i).alt=json[array[i]]['name'];} }
+        document.getElementsByClassName('hover').onclick=function() {console.log("a");}
+ </script>
+    </body>
+</html>
